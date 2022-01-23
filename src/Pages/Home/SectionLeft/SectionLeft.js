@@ -1,14 +1,17 @@
-import React from 'react';
-import Figure from './Figure';
-import FigureComplex from './FigureComplex';
+import React from "react";
+import CardFigure from "./CardFigure";
+import ReactChart from "./ReactChart";
+import PieChart from "./PieChart";
 
 export default function Section() {
-  return (               
+  return (
     <section className="col-lg-7 connectedSortable">
-      {/* Custom tabs (Charts with tabs)*/}
-      <Figure></Figure>
-      <FigureComplex></FigureComplex>
-
+      <CardFigure>
+        <ReactChart/>
+      </CardFigure>
+      <CardFigure>
+      <PieChart/>
+      </CardFigure>
     </section>
-    );
+  );
 }

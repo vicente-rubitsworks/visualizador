@@ -6,36 +6,36 @@ export default function TreeView(props) {
 
 
   return (
-    <li class="nav-item">
-      <a href="#" class="nav-link ">
-        <i class={`nav-icon fas ${icon}`}></i>
+    <li className="nav-item">
+      <a href="#" className="nav-link ">
+        <i className={`nav-icon fas ${icon}`}></i>
         <p>
           {principal}
-          <i class="right fas fa-angle-left"></i>
+          <i className="right fas fa-angle-left"></i>
         </p>
       </a>
-      <ul class="nav nav-treeview">
-        <li class="nav-item">
-          <a href="./index.html" class="nav-link">
-            <i class="fas fa-arrow-right nav-icon"></i>
+      <ul className="nav nav-treeview">
+        <li className="nav-item">
+          <a href="./index.html" className="nav-link">
+            <i className="fas fa-arrow-right nav-icon"></i>
             <p>2021</p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="./index2.html" class="nav-link">
-            <i class="fas fa-arrow-right nav-icon"></i>
+        <li className="nav-item">
+          <a href="./index2.html" className="nav-link">
+            <i className="fas fa-arrow-right nav-icon"></i>
             <p>2020</p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="./index3.html" class="nav-link">
-            <i class="fas fa-arrow-right nav-icon"></i>
+        <li className="nav-item">
+          <a href="./index3.html" className="nav-link">
+            <i className="fas fa-arrow-right nav-icon"></i>
             <p>2019</p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="./index3.html" class="nav-link">
-            <i class="fas fa-arrow-right nav-icon"></i>
+        <li className="nav-item">
+          <a href="./index3.html" className="nav-link">
+            <i className="fas fa-arrow-right nav-icon"></i>
             <p>2018</p>
           </a>
         </li>

@@ -4,6 +4,7 @@ import SectionLeft from "./SectionLeft";
 import SectionRight from "./SectionRight";
 import {Row, Container} from 'react-bootstrap'
 
+
 export default class Home extends Component {
   render() {
     return (
