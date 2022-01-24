@@ -9,7 +9,7 @@ export default function CardFigure(props) {
       <Card.Header>
         <h3 className="card-title">
           <i className="fas fa-th mr-1" />
-          Sales Graph
+          Directorio por comunas
         </h3>
         <div className="card-tools">
           <button
