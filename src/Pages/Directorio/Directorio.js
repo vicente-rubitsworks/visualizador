@@ -42,21 +42,21 @@ export default function Directorio() {
                   </Row>
                   <Row>
                       <SectionLeft>
-                        <CardFigure nombre='Dependencia administrativa por urbanidad'>
+                        <CardFigure nombre='Dependencia administrativa por urbanidad' icono='fas fa-chart-bar mr-2'>
                             <DependenciasRurales/>
                         </CardFigure>
-                        <CardFigure nombre='Directorio por comunas'>
+                        <CardFigure nombre='Directorio por comunas' icono='fas fa-chart-bar mr-2'>
                             <DirectorioComunas/>
                         </CardFigure>
                       </SectionLeft>
                       <SectionRight>
-                      <CardFigure nombre='Dependencia administrativa'>
+                      <CardFigure nombre='Dependencia administrativa' icono='fas fa-chart-pie mr-2' >
                             <ChartDependencias/>
                         </CardFigure>
-                        <CardFigure nombre='Dependencia administrativa'>
+                        <CardFigure nombre='Dependencia administrativa' icono='fas fa-chart-pie mr-2'>
                             <ChartDependencias/>
                         </CardFigure>
-                        <CardFigure nombre='Dependencia administrativa'>
+                        <CardFigure nombre='Dependencia administrativa' icono='fas fa-chart-pie mr-2'>
                             <ChartDependencias/>
                         </CardFigure>
                       </SectionRight>

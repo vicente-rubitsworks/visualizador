@@ -46,7 +46,7 @@ export default function ReactChart() {
       {
         label: "Mis datos",
         data: scores,
-        backgroundColor: 'rgb(172,108,52)',
+        backgroundColor: 'rgba(210,177,144,0.9)',
       },
     ],
   };

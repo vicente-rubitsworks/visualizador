@@ -1,4 +1,4 @@
-import React , {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -22,54 +22,58 @@ ChartJS.register(
 );
 
 export default function DependenciasRurales() {
-    const url ='https://analizador-backend.herokuapp.com/directorio/dependencia-rural/'
-    const [nada, setNada]=useState()
-    const fetchApi= async () =>{
-      const response =await fetch(url)
-      const responseJSON=await response.json()
-      console.log(responseJSON)
-      setNada(responseJSON)
-    }
-  
-    const labels = [];
-    const valor_rural = [];
-    const valor_urbano = [];
-    
-    for (var a in nada){
-      console.log(nada[a])
-      console.log(nada[a].cod)
+  const url =
+    "https://analizador-backend.herokuapp.com/directorio/dependencia-rural/";
+  const [nada, setNada] = useState();
+  const fetchApi = async () => {
+    const response = await fetch(url);
+    const responseJSON = await response.json();
+    console.log(responseJSON);
+    setNada(responseJSON);
+  };
 
-      if(!labels.includes(nada[a].cod)){
-        labels.push(nada[a].cod)
-      }
-      if(nada[a].rural == 0){
-        valor_urbano.push(nada[a].total)
-      }
-      else {
-          valor_rural.push(nada[a].total)
-      }
-      
+  const labels = [];
+  const valor_rural = [];
+  const valor_urbano = [];
+
+  for (var a in nada) {
+    console.log(nada[a]);
+    console.log(nada[a].cod);
+
+    if (!labels.includes(nada[a].cod)) {
+      labels.push(nada[a].cod);
     }
-    valor_rural.splice(2,0,0)
-    const data_dos = {
-      labels,
-      datasets: [
-        {
-            label: "Est. rurales",
-            data: valor_rural,
-            backgroundColor: 'rgb(172,108,52)',
-          },
-        {
-            label: "Est. urbanos",
-            data: valor_urbano,
-            backgroundColor: 'rgb(196,156,108)',
-          },
-      ],
-    };
-    useEffect(() => {
-      fetchApi()
-    }, [])
-   console.log(data_dos)
-    return <Bar height={250} options={{maintainAspectRatio: false}} data={data_dos}/>;
+    if (nada[a].rural == 0) {
+      valor_urbano.push(nada[a].total);
+    } else {
+      valor_rural.push(nada[a].total);
+    }
   }
-  
+  valor_rural.splice(2, 0, 0);
+  const data_dos = {
+    labels,
+    datasets: [
+      {
+        label: "Est. urbanos",
+        data: valor_urbano,
+        backgroundColor: "rgba(148,156,196,0.9)",
+      },
+      {
+        label: "Est. rurales",
+        data: valor_rural,
+        backgroundColor: "rgb(172,108,52,0.9)",
+      },
+    ],
+  };
+  useEffect(() => {
+    fetchApi();
+  }, []);
+  console.log(data_dos);
+  return (
+    <Bar
+      height={250}
+      options={{ maintainAspectRatio: false }}
+      data={data_dos}
+    />
+  );
+}

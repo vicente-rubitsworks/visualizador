@@ -4,8 +4,8 @@ import { Col, Card } from "react-bootstrap";
 export default function CardFigure(props) {
     const {children, nombre, icono} = props
   return (
-    <Card >
-      <Card.Header>
+    <Card>
+      <Card.Header >
         <h3 className="card-title">
           <i className={icono} />
           {nombre}

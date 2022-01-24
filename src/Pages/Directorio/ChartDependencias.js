@@ -1,25 +1,10 @@
 import React , {useState, useEffect} from 'react';
-import { Bar } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Pie } from 'react-chartjs-2';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(ArcElement, Tooltip, Legend);
+
 
 export default function ChartDependencias() {
     const url ='https://analizador-backend.herokuapp.com/directorio/dependencia/'
@@ -45,7 +30,7 @@ export default function ChartDependencias() {
         {
           label: "Mis datos",
           data: scores,
-          backgroundColor: 'rgb(172,108,52)',
+          backgroundColor: ['rgba(148,156,196,0.9)' , 'rgba(172,108,52,0.9)', 'rgba(210,177,144,0.9)', 'rgba(60,141,188,0.9)' ,'rgba(190,198,220,0.9)'],
         },
       ],
     };
@@ -53,6 +38,6 @@ export default function ChartDependencias() {
       fetchApi()
     }, [])
    
-    return <Bar data={data} height={250} options={{maintainAspectRatio: false}}  />;
+    return <Pie data={data} plugins={[ChartDataLabels]} height={200} options={{maintainAspectRatio: false}}  />;
   }
   
