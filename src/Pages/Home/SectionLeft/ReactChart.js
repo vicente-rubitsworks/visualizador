@@ -22,7 +22,7 @@ ChartJS.register(
 );
 
 export default function ReactChart() {
-  const url ='https://analizador-backend.herokuapp.com/directorio/comunas'
+  const url ='https://analizador-backend.herokuapp.com/directorio/comunas/'
   const [todos, setTodos]=useState()
   const fetchApi= async () =>{
     const response =await fetch(url)

@@ -1,17 +1,11 @@
 import React from "react";
-import CardFigure from "./CardFigure";
-import ReactChart from "./ReactChart";
-import PieChart from "./PieChart";
 
-export default function Section() {
+
+export default function Section(props) {
+  const {children}= props
   return (
     <section className="col-lg-7 connectedSortable">
-      <CardFigure>
-        <ReactChart/>
-      </CardFigure>
-      <CardFigure>
-      <PieChart/>
-      </CardFigure>
+      {children}
     </section>
   );
 }

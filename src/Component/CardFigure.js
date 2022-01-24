@@ -1,15 +1,15 @@
 import React from "react";
 import { Col, Card } from "react-bootstrap";
-import ReactChart from "./ReactChart";
+import ReactChart from "../Pages/Home/SectionLeft/ReactChart";
 
 export default function CardFigure(props) {
-    const {children} = props
+    const {children, nombre, icono} = props
   return (
     <Card>
       <Card.Header>
         <h3 className="card-title">
-          <i className="fas fa-th mr-1" />
-          Directorio por comunas
+          <i className={icono} />
+          {nombre}
         </h3>
         <div className="card-tools">
           <button
