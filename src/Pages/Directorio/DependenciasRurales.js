@@ -70,6 +70,6 @@ export default function DependenciasRurales() {
       fetchApi()
     }, [])
    console.log(data_dos)
-    return <Bar data={data_dos} />;
+    return <Bar height={250} options={{maintainAspectRatio: false}} data={data_dos}/>;
   }
   

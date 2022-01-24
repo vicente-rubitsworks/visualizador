@@ -7,7 +7,7 @@ export default class Header extends Component {
     return (
       <aside className="main-sidebar sidebar-light-navy elevation-4">
         {/* Brand Logo */}
-        <a href=" url 'inicio' %}" className="brand-link">
+        <a href="/" className="brand-link">
           <img
             src={logo}
             alt="AdminLTE Logo"

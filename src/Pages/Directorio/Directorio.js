@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Row, Container} from 'react-bootstrap'
-import Tarjeta from '../Home/Tarjeta';
+import Tarjeta from '../../Component/Tarjeta';
 import SectionLeft from '../Home/SectionLeft';
 import CardFigure from '../../Component/CardFigure';
 import ChartDependencias from './ChartDependencias';
@@ -8,6 +8,7 @@ import SectionRight from '../Home/SectionRight';
 import DependenciasRurales from './DependenciasRurales';
 import Header from '../../Component/Header';
 import Menu from '../../Component/Menu';
+import DirectorioComunas from './DirectorioComunas'
 
 export default function Directorio() {
     const url ='https://analizador-backend.herokuapp.com/directorio/total/'
@@ -41,12 +42,21 @@ export default function Directorio() {
                   </Row>
                   <Row>
                       <SectionLeft>
-                        <CardFigure nombre='Dependencia administrativa y urbanidad'>
+                        <CardFigure nombre='Dependencia administrativa por urbanidad'>
                             <DependenciasRurales/>
+                        </CardFigure>
+                        <CardFigure nombre='Directorio por comunas'>
+                            <DirectorioComunas/>
                         </CardFigure>
                       </SectionLeft>
                       <SectionRight>
                       <CardFigure nombre='Dependencia administrativa'>
+                            <ChartDependencias/>
+                        </CardFigure>
+                        <CardFigure nombre='Dependencia administrativa'>
+                            <ChartDependencias/>
+                        </CardFigure>
+                        <CardFigure nombre='Dependencia administrativa'>
                             <ChartDependencias/>
                         </CardFigure>
                       </SectionRight>

@@ -13,6 +13,7 @@ ReactDOM.render(
       <Route path="/" element={<App />} />
       <Route path="Home" element={<Home />} />
       <Route path="Directorio" element={<Directorio />} />
+      <Route path="*" element={<App />} />
 
     </Routes>
     </BrowserRouter>

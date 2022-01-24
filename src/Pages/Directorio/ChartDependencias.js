@@ -53,6 +53,6 @@ export default function ChartDependencias() {
       fetchApi()
     }, [])
    
-    return <Bar data={data} options={{ responsive: true }} />;
+    return <Bar data={data} height={250} options={{maintainAspectRatio: false}}  />;
   }
   

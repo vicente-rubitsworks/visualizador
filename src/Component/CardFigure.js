@@ -1,11 +1,10 @@
 import React from "react";
 import { Col, Card } from "react-bootstrap";
-import ReactChart from "../Pages/Home/SectionLeft/ReactChart";
 
 export default function CardFigure(props) {
     const {children, nombre, icono} = props
   return (
-    <Card>
+    <Card >
       <Card.Header>
         <h3 className="card-title">
           <i className={icono} />

@@ -54,5 +54,5 @@ export default function ReactChart() {
     fetchApi()
   }, [])
  
-  return <Bar data={data} options={{ responsive: true }} />;
+  return <Bar data={data} height={250} options={{maintainAspectRatio: false}}  />;
 }
