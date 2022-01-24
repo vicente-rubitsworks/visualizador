@@ -28,12 +28,8 @@ export default class Home extends Component {
                     nombre="Matrículas"
                     dato="172,145"
                     icon="fa-chalkboard"
-                    progressBar={ProgressBar}
                   >
-                    <div className="progress">
-                      <div className="progress-bar" style={{ width: "91%" }} />
-                    </div>
-                    <span className="progress-description ">91% Urbanos</span>
+                  
                   </Tarjeta>
                   <Tarjeta
                     nombre="Establecimientos"

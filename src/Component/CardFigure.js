@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Card } from "react-bootstrap";
 
 export default function CardFigure(props) {
-    const {children, nombre, icono} = props
+    const {children, nombre, icono, click} = props
   return (
     <Card>
       <Card.Header >
@@ -14,9 +14,9 @@ export default function CardFigure(props) {
           <button
             type="button"
             className="btn bg-info btn-sm mr-1"
-            data-card-widget="collapse"
+            onClick={click}
           >
-            <i className="fas fa-minus " />
+            <i class="fas fa-random"></i>
           </button>
           <button
             type="button"

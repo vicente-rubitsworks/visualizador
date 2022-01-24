@@ -34,7 +34,6 @@ export default function ReactChart() {
   const scores = [];
   
   for (var a in todos){
-    console.log(todos[a].content)
     labels.push(todos[a].label)
     scores.push(todos[a].content)
     

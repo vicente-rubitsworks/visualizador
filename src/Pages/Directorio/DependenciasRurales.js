@@ -28,7 +28,6 @@ export default function DependenciasRurales() {
   const fetchApi = async () => {
     const response = await fetch(url);
     const responseJSON = await response.json();
-    console.log(responseJSON);
     setNada(responseJSON);
   };
 
@@ -37,9 +36,6 @@ export default function DependenciasRurales() {
   const valor_urbano = [];
 
   for (var a in nada) {
-    console.log(nada[a]);
-    console.log(nada[a].cod);
-
     if (!labels.includes(nada[a].cod)) {
       labels.push(nada[a].cod);
     }
@@ -68,7 +64,6 @@ export default function DependenciasRurales() {
   useEffect(() => {
     fetchApi();
   }, []);
-  console.log(data_dos);
   return (
     <Bar
       height={250}
