@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function TreeView(props) {
 
-    const {principal, icon}=props
+    const {principal, icon,link='/'}=props
 
 
   return (
@@ -16,29 +17,12 @@ export default function TreeView(props) {
       </a>
       <ul className="nav nav-treeview">
         <li className="nav-item">
-          <a href="./index.html" className="nav-link">
+          <a href={link} className="nav-link">
             <i className="fas fa-arrow-right nav-icon"></i>
             <p>2021</p>
           </a>
         </li>
-        <li className="nav-item">
-          <a href="./index2.html" className="nav-link">
-            <i className="fas fa-arrow-right nav-icon"></i>
-            <p>2020</p>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a href="./index3.html" className="nav-link">
-            <i className="fas fa-arrow-right nav-icon"></i>
-            <p>2019</p>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a href="./index3.html" className="nav-link">
-            <i className="fas fa-arrow-right nav-icon"></i>
-            <p>2018</p>
-          </a>
-        </li>
+       
       </ul>
     </li>
   );

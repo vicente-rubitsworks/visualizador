@@ -31,7 +31,7 @@ export default class Header extends Component {
      with font-awesome or any other icon font library */}
               <TreeView principal="RESUMEN" icon='fa-newspaper'/>
               <li className="nav-header">REPORTES</li>
-              <TreeView principal="Directorio" icon='fa-chart-area'/>
+              <TreeView principal="Directorio" icon='fa-chart-area' link='/directorio'/>
               <TreeView principal="Matrícula" icon='fa-chart-area'/>
               <li className="nav-header">SISTEMA DE ADMISIÓN ESCOLAR</li>
               <TreeView principal="Vacantes y cupos" icon='fa-chalkboard-teacher'/>

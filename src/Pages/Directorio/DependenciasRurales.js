@@ -55,14 +55,14 @@ export default function DependenciasRurales() {
       labels,
       datasets: [
         {
-            label: "Mis datos",
+            label: "Est. rurales",
             data: valor_rural,
             backgroundColor: 'rgb(172,108,52)',
           },
         {
-            label: "Mis datos pero en rojo",
+            label: "Est. urbanos",
             data: valor_urbano,
-            backgroundColor: '#ff0000',
+            backgroundColor: 'rgb(196,156,108)',
           },
       ],
     };

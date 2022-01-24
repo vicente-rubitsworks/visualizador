@@ -14,14 +14,14 @@ export default function CardFigure(props) {
         <div className="card-tools">
           <button
             type="button"
-            className="btn bg-info btn-sm"
+            className="btn bg-info btn-sm mr-1"
             data-card-widget="collapse"
           >
-            <i className="fas fa-minus" />
+            <i className="fas fa-minus " />
           </button>
           <button
             type="button"
-            className="btn bg-info btn-sm"
+            className="btn bg-red btn-sm"
             data-card-widget="remove"
           >
             <i className="fas fa-times" />

@@ -6,6 +6,8 @@ import CardFigure from '../../Component/CardFigure';
 import ChartDependencias from './ChartDependencias';
 import SectionRight from '../Home/SectionRight';
 import DependenciasRurales from './DependenciasRurales';
+import Header from '../../Component/Header';
+import Menu from '../../Component/Menu';
 
 export default function Directorio() {
     const url ='https://analizador-backend.herokuapp.com/directorio/total/'
@@ -26,6 +28,9 @@ export default function Directorio() {
       }
 
   return (
+    <div className="wrapper">
+    <Header />
+    <Menu />
       <div className='content-wrapper'>
           <section className='content'>
               <Container fluid>
@@ -36,17 +41,20 @@ export default function Directorio() {
                   </Row>
                   <Row>
                       <SectionLeft>
-                        <CardFigure nombre='Directorio por dependencia administrativa'>
-                            <ChartDependencias/>
-                        </CardFigure>
-                        <CardFigure>
+                        <CardFigure nombre='Dependencia administrativa y urbanidad'>
                             <DependenciasRurales/>
                         </CardFigure>
                       </SectionLeft>
+                      <SectionRight>
+                      <CardFigure nombre='Dependencia administrativa'>
+                            <ChartDependencias/>
+                        </CardFigure>
+                      </SectionRight>
 
                   </Row>
               </Container>
           </section>
+      </div>
       </div>
   );
 }

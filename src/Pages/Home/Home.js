@@ -5,10 +5,18 @@ import SectionRight from "./SectionRight";
 import { Row, Container, ProgressBar } from "react-bootstrap";
 import ReactChart from "./SectionLeft/ReactChart";
 import CardFigure from "../../Component/CardFigure";
-
+import Header from "../../Component/Header";
+import Menu from "../../Component/Menu";
+import Footer from "../../Component/Footer/Footer";
+import { Link } from "react-router-dom";
+import Map from "./SectionRight/Map";
+import Calendar from "./SectionRight/Calendar";
 export default class Home extends Component {
   render() {
     return (
+      <div className="wrapper">
+      <Header />
+      <Menu />
       <div>
         {" "}
         {/* Content Wrapper. Contains page content */}
@@ -46,11 +54,14 @@ export default class Home extends Component {
                     <ReactChart></ReactChart>
                   </CardFigure>
                 </SectionLeft>
-                <SectionRight />
+                <SectionRight>
+                  <Map/>
+                  <Calendar/>
+                </SectionRight>
 
-                {/* right col (We are only adding the ID to make the widgets sortable)*/}
+                
 
-                {/* right col */}
+               
               </Row>
               {/* /.row (main row) */}
             </Container>
@@ -58,6 +69,8 @@ export default class Home extends Component {
           </section>
           {/* /.content */}
         </div>
+      </div>
+      <Footer />
       </div>
     );
   }
