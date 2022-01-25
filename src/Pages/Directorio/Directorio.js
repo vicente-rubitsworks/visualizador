@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Container } from "react-bootstrap";
+import { Row, Container, Col } from "react-bootstrap";
 import Tarjeta from "../../Component/Tarjeta";
 import SectionLeft from "../Home/SectionLeft";
 import CardFigure from "../../Component/CardFigure";
@@ -11,6 +11,8 @@ import Menu from "../../Component/Menu";
 import DirectorioComunas from "./DirectorioComunas";
 import Estado from "./Estado";
 import RuralidadComuna from "./RuralidadComunas";
+import EstadosRurales from "./EstadosRurales";
+import Footer from "../../Component/Footer";
 
 export default function Directorio() {
   const url = "https://analizador-backend.herokuapp.com/directorio/total/";
@@ -64,15 +66,28 @@ export default function Directorio() {
             </Row>
             {/* Graficos */}
             <Row>
-              {/* Seccion izquierda */}
-              <SectionLeft>
-                {/* Directorio por comunas */}
+              <Col className="connectedSortable">
+                {/* Comunas y urbanidad */}
                 <CardFigure
-                  nombre="Directorio por comunas"
+                  click={urban}
+                  nombre="Comunas y urbanidad"
                   icono="fas fa-chart-bar mr-2"
                 >
-                  <DirectorioComunas />
+                  <RuralidadComuna cambio={urbano}></RuralidadComuna>
                 </CardFigure>
+              </Col>
+            </Row>
+            <Row>
+              <Col className="connectedSortable" lg={7}>
+                {/* Estado de los establecimiento y urbanidad*/}
+                <CardFigure
+                  nombre="Estado de los establecimiento y urbanidad"
+                  icono="fas fa-chart-bar mr-2"
+                >
+                  <EstadosRurales />
+                </CardFigure>
+              </Col>{" "}
+              <Col className="connectedSortable" lg={5}>
                 {/* Dependencia administrativa por urbanidad */}
                 <CardFigure
                   nombre="Dependencia administrativa por urbanidad"
@@ -80,9 +95,19 @@ export default function Directorio() {
                 >
                   <DependenciasRurales />
                 </CardFigure>
-              </SectionLeft>
-              {/* Seccion derecha*/}
-              <SectionRight>
+              </Col>
+            </Row>
+            <Row>
+              <Col className="connectedSortable" lg={5}>
+                {/* Directorio por comunas */}
+                <CardFigure
+                  nombre="Directorio por comunas"
+                  icono="fas fa-chart-bar mr-2"
+                >
+                  <DirectorioComunas />
+                </CardFigure>
+              </Col>{" "}
+              <Col className="connectedSortable" lg={7}>
                 {/* Dependencia administrativa */}
                 <CardFigure
                   click={() => {
@@ -93,6 +118,10 @@ export default function Directorio() {
                 >
                   <ChartDependencias cambio={depe} />
                 </CardFigure>
+              </Col>
+            </Row>
+            <Row>
+              <Col className="connectedSortable">
                 {/* Estado de establecimientos */}
                 <CardFigure
                   click={click}
@@ -101,18 +130,12 @@ export default function Directorio() {
                 >
                   <Estado cambio={started}></Estado>
                 </CardFigure>
-                <CardFigure
-                  click={urban}
-                  nombre="Comunas y urbanidad"
-                  icono="fas fa-chart-bar mr-2"
-                >
-                  <RuralidadComuna cambio={urbano}></RuralidadComuna>
-                </CardFigure>
-              </SectionRight>
+              </Col>
             </Row>
           </Container>
         </section>
       </div>
+      <Footer></Footer>
     </div>
   );
 }

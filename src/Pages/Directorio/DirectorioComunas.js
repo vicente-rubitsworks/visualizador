@@ -1,4 +1,4 @@
-import React , { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -22,36 +22,37 @@ ChartJS.register(
 );
 
 export default function ReactChart() {
-  const url ='https://analizador-backend.herokuapp.com/directorio/comunas/'
-  const [todos, setTodos]=useState()
-  const fetchApi= async () =>{
-    const response =await fetch(url)
-    const responseJSON=await response.json()
-    setTodos(responseJSON)
-  }
+  const url = "https://analizador-backend.herokuapp.com/directorio/comunas/";
+  const [todos, setTodos] = useState();
+  const fetchApi = async () => {
+    const response = await fetch(url);
+    const responseJSON = await response.json();
+    setTodos(responseJSON);
+  };
 
   const labels = [];
   const scores = [];
-  
-  for (var a in todos){
-    labels.push(todos[a].label)
-    scores.push(todos[a].content)
-    
+
+  for (var a in todos) {
+    labels.push(todos[a].label);
+    scores.push(todos[a].content);
   }
-  
+
   const data = {
     labels,
     datasets: [
       {
         label: "Mis datos",
         data: scores,
-        backgroundColor: 'rgba(210,177,144,0.9)',
+        backgroundColor: "rgba(210,177,144,0.9)",
       },
     ],
   };
   useEffect(() => {
-    fetchApi()
-  }, [])
- 
-  return <Bar data={data} height={250} options={{maintainAspectRatio: false}}  />;
+    fetchApi();
+  }, []);
+
+  return (
+    <Bar data={data} height={200} options={{ maintainAspectRatio: false }} />
+  );
 }
