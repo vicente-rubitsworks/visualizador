@@ -10,12 +10,14 @@ import Header from "../../Component/Header";
 import Menu from "../../Component/Menu";
 import DirectorioComunas from "./DirectorioComunas";
 import Estado from "./Estado";
+import RuralidadComuna from "./RuralidadComunas";
 
 export default function Directorio() {
   const url = "https://analizador-backend.herokuapp.com/directorio/total/";
   const [estTotales, setEstTotales] = useState();
   const [started, setStarted] = useState();
-  var depe=true
+  const [urbano, setUrbano] = useState();
+  var depe = true;
   const fetchApi = async () => {
     const response = await fetch(url);
     const responseJSON = await response.json();
@@ -32,6 +34,9 @@ export default function Directorio() {
 
   const click = () => {
     setStarted(!started);
+  };
+  const urban = () => {
+    setUrbano(!urbano);
   };
 
   return (
@@ -80,11 +85,13 @@ export default function Directorio() {
               <SectionRight>
                 {/* Dependencia administrativa */}
                 <CardFigure
-                    click={()=>{depe = !depe}}
+                  click={() => {
+                    depe = !depe;
+                  }}
                   nombre="Dependencia administrativa"
                   icono="fas fa-chart-pie mr-2"
                 >
-                  <ChartDependencias cambio={depe}/>
+                  <ChartDependencias cambio={depe} />
                 </CardFigure>
                 {/* Estado de establecimientos */}
                 <CardFigure
@@ -93,6 +100,13 @@ export default function Directorio() {
                   icono="fas fa-chart-pie mr-2"
                 >
                   <Estado cambio={started}></Estado>
+                </CardFigure>
+                <CardFigure
+                  click={urban}
+                  nombre="Comunas y urbanidad"
+                  icono="fas fa-chart-bar mr-2"
+                >
+                  <RuralidadComuna cambio={urbano}></RuralidadComuna>
                 </CardFigure>
               </SectionRight>
             </Row>
