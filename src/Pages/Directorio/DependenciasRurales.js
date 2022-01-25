@@ -23,7 +23,7 @@ ChartJS.register(
 
 export default function DependenciasRurales() {
   const url =
-    "https://analizador-backend.herokuapp.com/directorio/dependencia-rural/";
+    "http://analizador-backend.herokuapp.com/directorio/dependencia-rural/";
   const [nada, setNada] = useState();
   const fetchApi = async () => {
     const response = await fetch(url);
@@ -45,7 +45,6 @@ export default function DependenciasRurales() {
       valor_rural.push(nada[a].total);
     }
   }
-  valor_rural.splice(2, 0, 0);
   const data_dos = {
     labels,
     datasets: [
