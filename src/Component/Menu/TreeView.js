@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function TreeView(props) {
 
-    const {principal, icon,link='/'}=props
+    const {principal, icon,link=''}=props
 
 
   return (
@@ -28,7 +28,12 @@ export default function TreeView(props) {
             <p>2020</p>
           </a>
         </li>
-       
+        <li className="nav-item">
+          <a href={`${link}/2019`} className="nav-link">
+            <i className="fas fa-arrow-right nav-icon"></i>
+            <p>2019</p>
+          </a>
+        </li>
       </ul>
     </li>
   );

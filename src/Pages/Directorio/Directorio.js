@@ -14,9 +14,11 @@ export default function Directorio(props) {
   {
     /* Variables para las tarjetas */
   }
-  const {anio=2021}=props
-  const base_url = `https://analizador-backend.herokuapp.com/directorio/${anio}`;
-  const url =`${base_url}/total/`
+  const { anio = 2021 } = props;
+  const base_url = `http://analizador-backend.herokuapp.com/directorio/${anio}`;
+  const url = `${base_url}/total/`;
+  const url2 = `${base_url}/municipales/`;
+
   const [estTotales, setEstTotales] = useState();
   const fetchApi = async () => {
     const response = await fetch(url);
@@ -26,9 +28,22 @@ export default function Directorio(props) {
   useEffect(() => {
     fetchApi();
   }, []);
+  const [estMunicipales, setEstMunicipales] = useState();
+  const fetchApiMun = async () => {
+    const response = await fetch(url2);
+    const responseJSON = await response.json();
+    setEstMunicipales(responseJSON);
+  };
+  useEffect(() => {
+    fetchApiMun();
+  }, []);
   const lista = [];
   for (const a in estTotales) {
     lista.push(estTotales[a]);
+  }
+  const lista_muni = [];
+  for (const a in estMunicipales) {
+    lista_muni.push(estMunicipales[a]);
   }
   {
     /* Estados de los graficos */
@@ -54,7 +69,7 @@ export default function Directorio(props) {
           />
           <Tarjeta
             nombre="Est. municipales"
-            dato="420"
+            dato={lista_muni[0]}
             icon="fa-user-graduate"
           />
           <Tarjeta nombre="Comunas" dato="15" icon="fa-city" />
@@ -78,7 +93,7 @@ export default function Directorio(props) {
         <Row>
           <Col className="connectedSortable" lg={7}>
             {/* Estado de los establecimiento y urbanidad*/}
-             <CardFigure
+            <CardFigure
               nombre="Dependencia administrativa por urbanidad"
               icono="fas fa-chart-bar mr-2"
             >
@@ -87,7 +102,7 @@ export default function Directorio(props) {
           </Col>{" "}
           <Col className="connectedSortable" lg={5}>
             {/* Dependencia administrativa por urbanidad */}
-           <CardFigure
+            <CardFigure
               nombre="Estado de los establecimiento y urbanidad"
               icono="fas fa-chart-bar mr-2"
             >
