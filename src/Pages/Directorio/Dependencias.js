@@ -3,12 +3,13 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie, Bar } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 export default function ChartDependencias(props) {
-    const {cambio}=props
-    const url ='https://analizador-backend.herokuapp.com/directorio/dependencia/'
+    const {cambio, url_base}=props
+    const url =`${url_base}/dependencia/`
     const [todos, setTodos]=useState()
     const fetchApi= async () =>{
       const response =await fetch(url)
@@ -44,12 +45,12 @@ export default function ChartDependencias(props) {
         <Bar
           data={data}
           plugins={[ChartDataLabels]}
-          height={200}
+          height={250}
           options={{ maintainAspectRatio: false }}
         />
       );
     }
    
-    return <Pie data={data} plugins={[ChartDataLabels]} height={200} options={{maintainAspectRatio: false}}  />;
+    return <Pie data={data} plugins={[ChartDataLabels]} height={250} options={{maintainAspectRatio: false}}  />;
   }
   

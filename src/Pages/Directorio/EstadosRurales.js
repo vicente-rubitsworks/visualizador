@@ -21,8 +21,9 @@ ChartJS.register(
   Legend
 );
 
-export default function EstadosRurales() {
-  const url = "http://localhost:8000/directorio/ruralidad-estado/";
+export default function EstadosRurales(props) {
+  const {cambio, url_base}=props
+  const url =`${url_base}/ruralidad-estado/`
   const [estado, setEstado] = useState();
   const fetchApi = async () => {
     const response = await fetch(url);
@@ -38,7 +39,7 @@ export default function EstadosRurales() {
     if (!labels.includes(estado[a].cod)) {
       labels.push(estado[a].cod);
     }
-    if (estado[a].rural == 0) {
+    if (estado[a].rural === 0) {
       valor_urbano.push(estado[a].total);
     } else {
       valor_rural.push(estado[a].total);

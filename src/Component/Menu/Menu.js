@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from "./ucn_logo.png";
 import TreeView from "./TreeView";
 
-export default class Header extends Component {
+export default class Menu extends Component {
   render() {
     return (
       <aside className="main-sidebar sidebar-light-navy elevation-4">

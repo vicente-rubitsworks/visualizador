@@ -21,8 +21,9 @@ ChartJS.register(
   Legend
 );
 
-export default function ReactChart() {
-  const url = "https://analizador-backend.herokuapp.com/directorio/comunas/";
+export default function ReactChart(props) {
+  const {cambio, url_base}=props
+  const url = `${url_base}/comunas/`;
   const [todos, setTodos] = useState();
   const fetchApi = async () => {
     const response = await fetch(url);
@@ -53,6 +54,6 @@ export default function ReactChart() {
   }, []);
 
   return (
-    <Bar data={data} height={200} options={{ maintainAspectRatio: false }} />
+    <Bar data={data} height={250} options={{ maintainAspectRatio: false }} />
   );
 }

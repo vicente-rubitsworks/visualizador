@@ -21,9 +21,9 @@ ChartJS.register(
   Legend
 );
 
-export default function DependenciasRurales() {
-  const url =
-    "http://analizador-backend.herokuapp.com/directorio/dependencia-rural/";
+export default function DependenciasRurales(props) {
+  const {cambio, url_base}=props
+  const url =`${url_base}/dependencia-rural/`
   const [nada, setNada] = useState();
   const fetchApi = async () => {
     const response = await fetch(url);
@@ -39,7 +39,7 @@ export default function DependenciasRurales() {
     if (!labels.includes(nada[a].cod)) {
       labels.push(nada[a].cod);
     }
-    if (nada[a].rural == 0) {
+    if (nada[a].rural === 0) {
       valor_urbano.push(nada[a].total);
     } else {
       valor_rural.push(nada[a].total);

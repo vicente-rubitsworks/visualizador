@@ -6,8 +6,8 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function Estado(props) {
-    const {cambio}=props
-  const url = "https://analizador-backend.herokuapp.com/directorio/estados/";
+  const { cambio, url_base } = props;
+  const url =`${url_base}/estados/`;
   const [estados, setEstados] = useState();
   const fetchApi = async () => {
     const response = await fetch(url);
@@ -43,22 +43,21 @@ export default function Estado(props) {
     fetchApi();
   }, []);
 
-
-  if(cambio){
+  if (cambio) {
     return (
-        <Bar
-          data={data}
-          plugins={[ChartDataLabels]}
-          height={200}
-          options={{ maintainAspectRatio: false }}
-        />
-      );
+      <Bar
+        data={data}
+        plugins={[ChartDataLabels]}
+        height={250}
+        options={{ maintainAspectRatio: false }}
+      />
+    );
   }
   return (
     <Pie
       data={data}
       plugins={[ChartDataLabels]}
-      height={200}
+      height={250}
       options={{ maintainAspectRatio: false }}
     />
   );

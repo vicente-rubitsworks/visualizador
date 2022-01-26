@@ -17,9 +17,15 @@ export default function TreeView(props) {
       </a>
       <ul className="nav nav-treeview">
         <li className="nav-item">
-          <a href={link} className="nav-link">
+          <a href={`${link}/2021`} className="nav-link">
             <i className="fas fa-arrow-right nav-icon"></i>
             <p>2021</p>
+          </a>
+        </li>
+        <li className="nav-item">
+          <a href={`${link}/2020`} className="nav-link">
+            <i className="fas fa-arrow-right nav-icon"></i>
+            <p>2020</p>
           </a>
         </li>
        

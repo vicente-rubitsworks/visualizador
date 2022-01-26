@@ -12,7 +12,9 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="Home" element={<Home />} />
-      <Route path="Directorio" element={<Directorio />} />
+      <Route path="Directorio/2021" element={<Directorio />} />
+      <Route path="Directorio/2020" element={<Directorio anio={2020}/>} />
+
       <Route path="*" element={<App />} />
 
     </Routes>

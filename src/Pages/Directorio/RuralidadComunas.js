@@ -22,12 +22,11 @@ ChartJS.register(
 );
 
 export default function RuralidadComuna(props) {
-  const { cambio } = props;
+  const {cambio, url_base}=props
   const arbitraryStackKey = "stack1";
   const arbitraryStackKey2 = "stack2";
 
-  const url =
-    "https://analizador-backend.herokuapp.com/directorio/ruralidad-comuna/";
+  const url =`${url_base}/ruralidad-comuna/`
   const [comuna, setComuna] = useState();
   const fetchApi = async () => {
     const response = await fetch(url);
@@ -43,7 +42,7 @@ export default function RuralidadComuna(props) {
     if (!labels.includes(comuna[a].cod)) {
       labels.push(comuna[a].cod);
     }
-    if (comuna[a].rural == 0) {
+    if (comuna[a].rural === 0) {
       valor_urbano.push(comuna[a].total);
     } else {
       valor_rural.push(comuna[a].total);
