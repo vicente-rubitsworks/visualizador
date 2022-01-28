@@ -2,15 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Row, Container, Col } from "react-bootstrap";
 import Tarjeta from "../../Component/Tarjeta";
 import CardFigure from "../../Component/CardFigure";
-import ChartDependencias from "./Dependencias";
-import DependenciasRurales from "./DependenciasRurales";
-import DirectorioComunas from "./DirectorioComunas";
-import Estado from "./Estado";
-import RuralidadComuna from "./RuralidadComunas";
-import EstadosRurales from "./EstadosRurales";
 import Structure from "../../Component/Structure";
 
-export default function Directorio(props) {
+export default function ResumenDirectorio(props) {
   {
     /* Variables para las tarjetas */
   }
@@ -76,7 +70,7 @@ export default function Directorio(props) {
         <div className="container-fluid">
           <div className="row mb-2 text-center">
             <div className="col-sm-12">
-              <h1 className="m-0">Directorio del año {anio}</h1>
+              <h1 className="m-0">Resumen del directorio</h1>
             </div>
 
             {/* /.col */}
@@ -106,65 +100,7 @@ export default function Directorio(props) {
           <Tarjeta nombre="Comunas" dato="15" icon="fa-city" />
         </Row>
         {/* Graficos */}
-        <Row>
-          <Col className="connectedSortable">
-            {/* Comunas y urbanismo */}
-            <CardFigure
-              click={urban}
-              nombre="Comunas y urbanismo"
-              icono="fas fa-chart-bar mr-2"
-            >
-              <RuralidadComuna
-                cambio={urbano}
-                url_base={base_url}
-              ></RuralidadComuna>
-            </CardFigure>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="connectedSortable" lg={7}>
-            {/* Estado de establecimientos */}
-            <CardFigure
-              click={click}
-              nombre="Estado de los establecimientos"
-              icono="fas fa-chart-pie mr-2"
-            >
-              <Estado cambio={started} url_base={base_url}></Estado>
-            </CardFigure>
-          </Col>
-          <Col className="connectedSortable" lg={5}>
-            {/* Estado de los establecimiento y urbanismo*/}
-            <CardFigure
-              nombre="Dependencia adm. por urbanismo"
-              icono="fas fa-chart-bar mr-2"
-              click={urban2}
-            >
-              <DependenciasRurales url_base={base_url} cambio={urbano2} />
-            </CardFigure>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="connectedSortable" lg={5}>
-            {/* Dependencia administrativa por urbanismo */}
-            <CardFigure
-              nombre="Estado de los estab. y urbanismo"
-              icono="fas fa-chart-bar mr-2"
-              click={estad}
-            >
-              <EstadosRurales url_base={base_url} cambio={estados} />
-            </CardFigure>
-          </Col>
-          <Col className="connectedSortable" lg={7}>
-            {/* Dependencia administrativa */}
-            <CardFigure
-              nombre="Dependencia administrativa"
-              icono="fas fa-chart-pie mr-2"
-              click={depe}
-            >
-              <ChartDependencias url_base={base_url} cambio={dependencias}/>
-            </CardFigure>
-          </Col>
-        </Row>
+
       </Container>
     </Structure>
   );

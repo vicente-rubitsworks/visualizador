@@ -4,20 +4,25 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import Directorio from './Pages/Directorio'
+import Directorio from "./Pages/Directorio";
+import Matriculas from "./Pages/Matriculas";
+import ResumenDirectorio from "./Pages/ResumenDirectorio";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="Home" element={<Home />} />
-      <Route path="directorio/2021" element={<Directorio />} />
-      <Route path="directorio/2020" element={<Directorio anio={2020}/>} />
-      <Route path="directorio/2019" element={<Directorio anio={2019}/>} />
-      <Route path="*" element={<App />} />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="Home" element={<Home />} />
+        <Route path="resumen/directorios" element={<ResumenDirectorio />} />
 
-    </Routes>
+        <Route path="directorio/2021" element={<Directorio />} />
+        <Route path="directorio/2020" element={<Directorio anio={2020} />} />
+        <Route path="directorio/2019" element={<Directorio anio={2019} />} />
+        <Route path="matriculas/2020" element={<Matriculas anio={2020} />} />
+        <Route path="matriculas/2019" element={<Matriculas anio={2019} />} />
+        <Route path="*" element={<App />} />
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

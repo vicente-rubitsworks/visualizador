@@ -22,8 +22,11 @@ ChartJS.register(
 );
 
 export default function DependenciasRurales(props) {
-  const {cambio, url_base}=props
-  const url =`${url_base}/dependencia-rural/`
+  const arbitraryStackKey = "stack1";
+  const arbitraryStackKey2 = "stack2";
+
+  const { cambio, url_base } = props;
+  const url = `${url_base}/dependencia-rural/`;
   const [nada, setNada] = useState();
   const fetchApi = async () => {
     const response = await fetch(url);
@@ -54,6 +57,7 @@ export default function DependenciasRurales(props) {
         backgroundColor: "rgba(148,156,196,0.9)",
       },
       {
+        stack: arbitraryStackKey2,
         label: "Est. rurales",
         data: valor_rural,
         backgroundColor: "rgb(172,108,52,0.9)",
@@ -63,6 +67,31 @@ export default function DependenciasRurales(props) {
   useEffect(() => {
     fetchApi();
   }, []);
+  if (cambio) {
+    return (
+      <Bar
+        height={250}
+        options={{ maintainAspectRatio: false }}
+        data={{
+          labels,
+          datasets: [
+            {
+              stack: arbitraryStackKey,
+              label: "Est. urbanos",
+              data: valor_urbano,
+              backgroundColor: "rgba(148,156,196,0.9)",
+            },
+            {
+              stack: arbitraryStackKey,
+              label: "Est. rurales",
+              data: valor_rural,
+              backgroundColor: "rgb(172,108,52,0.9)",
+            },
+          ],
+        }}
+      />
+    );
+  }
   return (
     <Bar
       height={250}

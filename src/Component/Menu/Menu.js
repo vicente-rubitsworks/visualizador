@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "./ucn_logo.png";
 import TreeView from "./TreeView";
+import Resumen from "./Resumen";
 
 export default class Menu extends Component {
   render() {
@@ -29,13 +30,27 @@ export default class Menu extends Component {
             >
               {/* Add icons to the links using the .nav-icon class
      with font-awesome or any other icon font library */}
-              <TreeView principal="RESUMEN" icon='fa-newspaper'/>
+              <Resumen principal="RESUMEN" icon="fa-newspaper" />
               <li className="nav-header">REPORTES</li>
-              <TreeView principal="Directorio" icon='fa-chart-area' link='/directorio'/>
-              <TreeView principal="Matrícula" icon='fa-chart-area'/>
+              <TreeView
+                principal="Directorio"
+                icon="fa-chart-area"
+                link="/directorio"
+              />
+              <TreeView
+                principal="Matrícula"
+                icon="fa-chart-area"
+                link="/matriculas"
+              />
               <li className="nav-header">SISTEMA DE ADMISIÓN ESCOLAR</li>
-              <TreeView principal="Vacantes y cupos" icon='fa-chalkboard-teacher'/>
-              <TreeView principal="Postulaciones" icon='fa-chalkboard-teacher'/>
+              <TreeView
+                principal="Vacantes y cupos"
+                icon="fa-chalkboard-teacher"
+              />
+              <TreeView
+                principal="Postulaciones"
+                icon="fa-chalkboard-teacher"
+              />
 
               <li className="nav-header">UTILIDADES</li>
               <li className="nav-item">
