@@ -13,7 +13,7 @@ export default function Matrículas(props) {
     /* Variables para las tarjetas */
   }
   const { anio = 2020 } = props;
-  const base_url = `http://analizador-backend.herokuapp.com/matriculas/${anio}`;
+  const base_url = `https://analizador-backend.herokuapp.com/matriculas/${anio}`;
   const url = `${base_url}/total/`;
   const url2 = `${base_url}/numero-de-establecimientos/`;
   const url3 = `${base_url}/matriculas-municipales/`;

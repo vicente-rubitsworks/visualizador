@@ -15,7 +15,7 @@ export default function Directorio(props) {
     /* Variables para las tarjetas */
   }
   const { anio = 2021 } = props;
-  const base_url = `http://analizador-backend.herokuapp.com/directorio/${anio}`;
+  const base_url = `https://analizador-backend.herokuapp.com/directorio/${anio}`;
   const url = `${base_url}/total/`;
   const url2 = `${base_url}/municipales/`;
 
