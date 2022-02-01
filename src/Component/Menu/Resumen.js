@@ -2,9 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Resumen(props) {
-
-    const {principal, icon,link=''}=props
-
+  const { principal, icon, link = "" } = props;
 
   return (
     <li className="nav-item">
@@ -16,7 +14,6 @@ export default function Resumen(props) {
         </p>
       </a>
       <ul className="nav nav-treeview">
-        
         <li className="nav-item">
           <a href={`${link}/resumen/directorios`} className="nav-link">
             <i className="fas fa-arrow-right nav-icon"></i>
@@ -27,12 +24,6 @@ export default function Resumen(props) {
           <a href={`${link}/r-matriculass`} className="nav-link">
             <i className="fas fa-arrow-right nav-icon"></i>
             <p>Matriculas</p>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a href={`${link}/r-postulaciones`} className="nav-link">
-            <i className="fas fa-arrow-right nav-icon"></i>
-            <p>Postulaciones</p>
           </a>
         </li>
       </ul>

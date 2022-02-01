@@ -42,15 +42,6 @@ export default class Menu extends Component {
                 icon="fa-chart-area"
                 link="/matriculas"
               />
-              <li className="nav-header">SISTEMA DE ADMISIÓN ESCOLAR</li>
-              <TreeView
-                principal="Vacantes y cupos"
-                icon="fa-chalkboard-teacher"
-              />
-              <TreeView
-                principal="Postulaciones"
-                icon="fa-chalkboard-teacher"
-              />
 
               <li className="nav-header">UTILIDADES</li>
               <li className="nav-item">
@@ -62,6 +53,7 @@ export default class Menu extends Component {
                   </p>
                 </a>
               </li>
+              <Resumen principal="Creador de graficos" icon="fa-chart-line" />
             </ul>
           </nav>
         </div>

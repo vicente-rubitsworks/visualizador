@@ -7,6 +7,7 @@ import Home from "./Pages/Home";
 import Directorio from "./Pages/Directorio";
 import Matriculas from "./Pages/Matriculas";
 import ResumenDirectorio from "./Pages/ResumenDirectorio";
+import Creador from './Pages/CreadorDeGraficos'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,6 +22,8 @@ ReactDOM.render(
         <Route path="directorio/2019" element={<Directorio anio={2019} />} />
         <Route path="matriculas/2020" element={<Matriculas anio={2020} />} />
         <Route path="matriculas/2019" element={<Matriculas anio={2019} />} />
+        <Route path="creador" element={<Creador />} />
+
         <Route path="*" element={<App />} />
       </Routes>
     </BrowserRouter>
