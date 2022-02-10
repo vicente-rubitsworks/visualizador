@@ -53,7 +53,32 @@ export default class Menu extends Component {
                   </p>
                 </a>
               </li>
-              <Resumen principal="Creador de graficos" icon="fa-chart-line" />
+              <li className="nav-item">
+                <a href="#" className="nav-link ">
+                  <i className={`nav-icon fas fa-chart-bar`}></i>
+                  <p>
+                    Buscador de tablas
+                    <i className="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul className="nav nav-treeview">
+                  <li className="nav-item">
+                    <a
+                      href={`/directorio/creador`}
+                      className="nav-link"
+                    >
+                      <i className="fas fa-arrow-right nav-icon"></i>
+                      <p>Directorios</p>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a href={`/matriculas/creador`} className="nav-link">
+                      <i className="fas fa-arrow-right nav-icon"></i>
+                      <p>Matriculas</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </nav>
         </div>

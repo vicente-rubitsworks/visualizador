@@ -2,13 +2,40 @@ import React, { useState, useEffect } from "react";
 import { Row, Container, Col, InputGroup } from "react-bootstrap";
 import Structure from "../../Component/Structure";
 import DependenciasRurales from "./DependenciasRurales";
-import CardFigure from "../../Component/CardFigure";
+import CardFigure from "../../Component/CardFigureCreator";
 
 export default function Creador(props) {
-  const [value, setValue] = useState("");
-  {
-    /* Variables para las tarjetas */
+  const { url , columns} = props;
+  const [valu, setValu] = useState("NONE");
+  const [todos, setTodos] = useState();
+  const getColumnas = async () => {
+    try {
+      const response = await fetch(
+        columns,
+        {
+          method: "GET",
+        }
+      );
+      const json = await response.json();
+      setTodos(json);
+
+      return json;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const options = [
+    { value: "NONE", label: "NONE" },
+  
+  ];
+  useEffect(() => {
+    getColumnas();
+  }, []);
+  for (var dato in todos) {
+    options.push({ value: todos[dato].nombre, label: todos[dato].nombre });
   }
+
   return (
     <Structure>
       <div className="content-header">
@@ -29,15 +56,20 @@ export default function Creador(props) {
           <Col lg={3}>
             <InputGroup>
               <label>Ingresa una variable</label>
-              <input
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-              ></input>
+              <select
+                value={valu}
+                onChange={(e) => setValu(e.target.value)}
+                placeholder="NONE"
+              >
+                {options.map(({ value, label }, index) => (
+                  <option value={value}>{label}</option>
+                ))}
+              </select>
             </InputGroup>
           </Col>
           <Col lg={9}>
-            <CardFigure>
-              <DependenciasRurales value={value}></DependenciasRurales>
+            <CardFigure nombre={valu} icono={"fas fa-chart-bar mr-1"}>
+              <DependenciasRurales url_base={url} value={valu}></DependenciasRurales>
             </CardFigure>
           </Col>
         </Row>

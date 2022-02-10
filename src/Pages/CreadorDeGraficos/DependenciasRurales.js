@@ -33,7 +33,7 @@ export default function DependenciasRurales(props) {
   const getComunas = async () => {
     try {
       const response = await fetch(
-        "https://analizador-backend.herokuapp.com/matriculas/creador/prueba/",
+        url_base,
         {
           method: "POST",
           headers: {

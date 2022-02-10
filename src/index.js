@@ -7,7 +7,7 @@ import Home from "./Pages/Home";
 import Directorio from "./Pages/Directorio";
 import Matriculas from "./Pages/Matriculas";
 import ResumenDirectorio from "./Pages/ResumenDirectorio";
-import Creador from './Pages/CreadorDeGraficos'
+import Creador from "./Pages/CreadorDeGraficos";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,7 +22,24 @@ ReactDOM.render(
         <Route path="directorio/2019" element={<Directorio anio={2019} />} />
         <Route path="matriculas/2020" element={<Matriculas anio={2020} />} />
         <Route path="matriculas/2019" element={<Matriculas anio={2019} />} />
-        <Route path="creador" element={<Creador />} />
+        <Route
+          path="matriculas/creador"
+          element={
+            <Creador
+              url="https://analizador-backend.herokuapp.com/matriculas/creador/prueba/"
+              columns="https://analizador-backend.herokuapp.com/matriculas/columnas/"
+            />
+          }
+        />
+        <Route
+          path="directorio/creador"
+          element={
+            <Creador
+              url="https://analizador-backend.herokuapp.com/directorio/creador/prueba/"
+              columns="https://analizador-backend.herokuapp.com/directorio/columnas/"
+            />
+          }
+        />
 
         <Route path="*" element={<App />} />
       </Routes>
