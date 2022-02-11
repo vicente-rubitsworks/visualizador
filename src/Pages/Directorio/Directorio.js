@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Container, Col } from "react-bootstrap";
+import { Row, Container, Col, Modal, Button } from "react-bootstrap";
 import Tarjeta from "../../Component/Tarjeta";
 import CardFigure from "../../Component/CardFigure";
 import ChartDependencias from "./Dependencias";
@@ -19,11 +19,17 @@ export default function Directorio(props) {
   const url = `${base_url}/total/`;
   const url2 = `${base_url}/municipales/`;
 
+  const [show, setShow] = useState(true);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const [estTotales, setEstTotales] = useState();
   const fetchApi = async () => {
     const response = await fetch(url);
     const responseJSON = await response.json();
     setEstTotales(responseJSON);
+    setShow(false);
   };
   useEffect(() => {
     fetchApi();
@@ -72,6 +78,19 @@ export default function Directorio(props) {
 
   return (
     <Structure>
+      <>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Se estan cargando los datos</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Usualmente se demora unos segundos !</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
       <div className="content-header">
         <div className="container-fluid">
           <div className="row mb-2 text-center">
@@ -98,11 +117,7 @@ export default function Directorio(props) {
             dato={lista_muni[0]}
             icon="fa-user-graduate"
           />
-          <Tarjeta
-            nombre="Est. urbanos"
-            dato={610}
-            icon="fa-user-graduate"
-          />
+          <Tarjeta nombre="Est. urbanos" dato={610} icon="fa-user-graduate" />
           <Tarjeta nombre="Comunas" dato="15" icon="fa-city" />
         </Row>
         {/* Graficos */}
@@ -161,7 +176,7 @@ export default function Directorio(props) {
               icono="fas fa-chart-pie mr-2"
               click={depe}
             >
-              <ChartDependencias url_base={base_url} cambio={dependencias}/>
+              <ChartDependencias url_base={base_url} cambio={dependencias} />
             </CardFigure>
           </Col>
         </Row>
