@@ -22,6 +22,7 @@ ChartJS.register(
 );
 
 export default function EstadosRurales(props) {
+  
   const arbitraryStackKey = "stack1";
   const arbitraryStackKey2 = "stack2";
   const { cambio, url_base } = props;

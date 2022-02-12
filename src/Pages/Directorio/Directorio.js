@@ -20,9 +20,7 @@ export default function Directorio(props) {
   const url2 = `${base_url}/municipales/`;
 
   const [show, setShow] = useState(true);
-
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const [estTotales, setEstTotales] = useState();
   const fetchApi = async () => {
@@ -79,14 +77,14 @@ export default function Directorio(props) {
   return (
     <Structure>
       <>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Se estan cargando los datos</Modal.Title>
+        <Modal show={show}>
+          <Modal.Header>
+            <Modal.Title>Espere mientras se cargan los datos.</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Usualmente se demora unos segundos !</Modal.Body>
+          <Modal.Body>¡Usualmente se demora solo unos segundos !</Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
-              Close
+              Cerrar
             </Button>
           </Modal.Footer>
         </Modal>

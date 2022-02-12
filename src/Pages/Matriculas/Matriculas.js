@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Container, Col } from "react-bootstrap";
+import { Row, Container, Col, Modal, Button } from "react-bootstrap";
 import Tarjeta from "../../Component/Tarjeta";
 import CardFigure from "../../Component/CardFigure";
 import Structure from "../../Component/Structure";
@@ -12,6 +12,10 @@ export default function Matrículas(props) {
   {
     /* Variables para las tarjetas */
   }
+  const [show, setShow] = useState(true);
+
+  const handleClose = () => setShow(false);
+
   const { anio = 2020 } = props;
   const base_url = `https://analizador-backend.herokuapp.com/matriculas/${anio}`;
   const url = `${base_url}/total/`;
@@ -23,6 +27,7 @@ export default function Matrículas(props) {
     const response = await fetch(url);
     const responseJSON = await response.json();
     setEstTotales(responseJSON);
+    setShow(false);
   };
   useEffect(() => {
     fetchApi();
@@ -72,6 +77,20 @@ export default function Matrículas(props) {
 
   return (
     <Structure>
+      <>
+        <Modal show={show}>
+          <Modal.Header>
+            <Modal.Title>Espere mientras se cargan los datos.</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>¡Usualmente se demora solo unos segundos !</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Cerrar
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+
       <div className="content-header">
         <div className="container-fluid">
           <div className="row mb-2 text-center">
@@ -102,7 +121,7 @@ export default function Matrículas(props) {
           <Tarjeta nombre="Comunas" dato="15" icon="fa-city" />
         </Row>
         <Row>
-          <Col>
+          <Col className="connectedSortable">
             <CardFigure
               nombre={"Matrículas por directorio"}
               icono="fas fa-chart-bar mr-2"
@@ -112,7 +131,7 @@ export default function Matrículas(props) {
           </Col>
         </Row>
         <Row>
-          <Col xl={7}>
+          <Col xl={7} className="connectedSortable">
             <CardFigure
               nombre={"Matrículas por dependencia"}
               icono="fas fa-chart-bar mr-2"
@@ -120,7 +139,7 @@ export default function Matrículas(props) {
               <Dependencias url_base={base_url}></Dependencias>
             </CardFigure>
           </Col>
-          <Col xl={5}>
+          <Col xl={5} className="connectedSortable">
             <CardFigure
               nombre={"Matrículas por urbanismo"}
               icono="fas fa-chart-pie mr-2"
@@ -131,7 +150,7 @@ export default function Matrículas(props) {
         </Row>
 
         <Row>
-          <Col lg={5}>
+          <Col lg={5} className="connectedSortable">
             <CardFigure
               icono="fas fa-chart-pie mr-2"
               nombre={"Matrículas por géneros"}
@@ -139,7 +158,7 @@ export default function Matrículas(props) {
               <Generos url_base={base_url}></Generos>
             </CardFigure>
           </Col>
-          <Col lg={7}></Col>
+          <Col lg={7} className="connectedSortable"></Col>
         </Row>
       </Container>
     </Structure>
