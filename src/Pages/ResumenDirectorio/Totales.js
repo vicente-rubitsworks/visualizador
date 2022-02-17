@@ -144,10 +144,10 @@ export default function Totales(props) {
   };
   if (cambio) {
     return (
-      <Bar data={data1} height={250} options={{ maintainAspectRatio: false }} />
+      <Bar data={data1} height={200} options={{ maintainAspectRatio: false}} />
     );
   }
   return (
-    <Line data={data2} height={250} options={{ maintainAspectRatio: false }} />
+    <Line data={data2} height={200} options={{ maintainAspectRatio: false}} />
   );
 }

@@ -57,28 +57,79 @@ export default function ResumenDirectorio(props) {
         </Row>
         {/* Graficos */}
         <Row>
-          <Col className="connectedSortable">
+          <Col lg={7} className="connectedSortable">
             <CardFigure
-              nombre="Evolucion del directorio"
+              nombre="Evolución del directorio"
               icono="fas fa-chart-line mr-2"
               click={click}
             >
               <Totales
                 cambio={started}
-                url_base={"http://analizador-backend.herokuapp.com/evolucion/directorios"}
+                url_base={
+                  "http://analizador-backend.herokuapp.com/evolucion/directorios"
+                }
               />
             </CardFigure>
           </Col>
-          <Col className="connectedSortable"></Col>
+          <Col lg={5} className="connectedSortable">
+            <CardFigure
+              nombre="Evolución del estado urbano"
+              icono="fas fa-chart-line mr-2"
+            >
+              <Comunas
+                url_base={
+                  "http://analizador-backend.herokuapp.com/evolucion/directorios"
+                }
+                column={"RURAL_RBD"}
+                color={"172,108,52"}
+              />
+            </CardFigure>
+          </Col>
         </Row>
         <Row>
           <Col className="connectedSortable">
             <CardFigure
-              nombre="Evolucion del directorio por comunas"
+              nombre="Evolución del directorio por comunas"
               icono="fas fa-chart-line mr-2"
             >
               <Comunas
-                url_base={"http://analizador-backend.herokuapp.com/evolucion/directorios"}
+                url_base={
+                  "http://analizador-backend.herokuapp.com/evolucion/directorios"
+                }
+                column={"NOM_COM_RBD"}
+                color={"60, 141, 188"}
+              />
+            </CardFigure>
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={5} className="connectedSortable">
+            {" "}
+            <CardFigure
+              nombre="Evolución del directorio por dependencia adm."
+              icono="fas fa-chart-line mr-2"
+            >
+              <Comunas
+                url_base={
+                  "http://analizador-backend.herokuapp.com/evolucion/directorios"
+                }
+                column={"COD_DEPE2"}
+                color={"190,198,220"}
+              />
+            </CardFigure>
+          </Col>
+          <Col lg={7} className="connectedSortable">
+            {" "}
+            <CardFigure
+              nombre="Evolución del directorio por dep. adm. resumida"
+              icono="fas fa-chart-line mr-2"
+            >
+              <Comunas
+                url_base={
+                  "http://analizador-backend.herokuapp.com/evolucion/directorios"
+                }
+                column={"COD_DEPE"}
+                color={"210,177,144"}
               />
             </CardFigure>
           </Col>

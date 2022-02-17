@@ -21,7 +21,7 @@ ChartJS.register(
 );
 
 export default function Comunas(props) {
-  const { url_base } = props;
+  const { url_base, column, color } = props;
   const url = `${url_base}/total/`;
   const [query, setQuery] = useState();
 
@@ -33,7 +33,7 @@ export default function Comunas(props) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        variable: "NOM_COM_RBD",
+        variable: column,
       }),
     });
     const responseJSON = await response.json();
@@ -64,11 +64,10 @@ export default function Comunas(props) {
   console.log(scores);
 
   const colors = [
-    "rgba(60,141,188,0.3)",
-    "rgba(60,141,188,0.5)",
-    "rgba(60,141,188,0.7)",
-    "rgba(60,141,188,0.9)",
-
+    `rgba(${color},0.3)`,
+    `rgba(${color},0.5)`,
+    `rgba(${color},0.7)`,
+    `rgba(${color},0.9)`,
   ];
   const data = {
     labels: Array.from(array),
@@ -105,6 +104,10 @@ export default function Comunas(props) {
   };
 
   return (
-    <Bar data={data} height={250} options={{ maintainAspectRatio: false }} />
+    <Bar
+      data={data}
+      height={200}
+      options={{ responsive: true, maintainAspectRatio: false }}
+    />
   );
 }

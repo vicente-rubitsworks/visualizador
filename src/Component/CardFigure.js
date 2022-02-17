@@ -2,10 +2,10 @@ import React from "react";
 import { Col, Card } from "react-bootstrap";
 
 export default function CardFigure(props) {
-    const {children, nombre, icono, click} = props
+  const { children, nombre, icono, click } = props;
   return (
     <Card>
-      <Card.Header >
+      <Card.Header>
         <h3 className="card-title">
           <i className={icono} />
           {nombre}
@@ -17,6 +17,13 @@ export default function CardFigure(props) {
             onClick={click}
           >
             <i class="fas fa-random"></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-tool"
+            data-card-widget="maximize"
+          >
+            <i class="fas fa-expand"></i>
           </button>
           <button
             type="button"
