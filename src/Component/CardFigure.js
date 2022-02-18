@@ -20,13 +20,6 @@ export default function CardFigure(props) {
           </button>
           <button
             type="button"
-            class="btn btn-tool"
-            data-card-widget="maximize"
-          >
-            <i class="fas fa-expand"></i>
-          </button>
-          <button
-            type="button"
             className="btn bg-red btn-sm"
             data-card-widget="remove"
           >

@@ -10,6 +10,7 @@ export default function CardFigureCreator(props) {
           <i className={icono} />
           {nombre}
         </h3>
+        
       </Card.Header>
       <Card.Body>{children}</Card.Body>
     </Card>

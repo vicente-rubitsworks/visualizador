@@ -22,12 +22,12 @@ ChartJS.register(
 );
 
 export default function RuralidadComuna(props) {
-  const {cambio, url_base}=props
+  const { cambio, url_base } = props;
   const arbitraryStackKey = "stack1";
   const arbitraryStackKey2 = "stack2";
 
-  const url =`${url_base}/ruralidad-comuna/`
-  const url2 =`${url_base}/comunas/`
+  const url = `${url_base}/ruralidad-comuna/`;
+  const url2 = `${url_base}/comunas/`;
 
   const [comuna, setComuna] = useState();
   const fetchApi = async () => {
@@ -47,7 +47,6 @@ export default function RuralidadComuna(props) {
   const valor_urbano = [];
   const scores = [];
 
-
   for (var a in todos) {
     scores.push(todos[a].content);
   }
@@ -65,27 +64,19 @@ export default function RuralidadComuna(props) {
   const data = {
     labels,
     datasets: [
-      
       {
         label: "Est. urbanos",
         data: valor_urbano,
         backgroundColor: "rgba(148,156,196,0.9)",
-      },
-      {
-        
-        label: "Est. rurales",
-        data: valor_rural,
-        backgroundColor: "rgb(172,1,52,0.9)",
       },
     ],
   };
   useEffect(() => {
     fetchApi();
     fetchApi2();
-
   }, []);
 
-    console.log(todos)
+  console.log(todos);
   if (cambio) {
     return (
       <Bar
@@ -93,12 +84,11 @@ export default function RuralidadComuna(props) {
           labels,
           datasets: [
             {
-              
               label: "Est. totales",
               data: scores,
               backgroundColor: "rgba(210,177,144,0.9)",
             },
-            
+
             {
               stack: arbitraryStackKey,
               label: "Est. urbanos",
@@ -127,16 +117,9 @@ export default function RuralidadComuna(props) {
         labels,
         datasets: [
           {
-            stack: arbitraryStackKey,
-            label: "Est. urbanos",
-            data: valor_urbano,
-            backgroundColor: "rgba(148,156,196,0.9)",
-          },
-          {
-            stack: arbitraryStackKey2,
-            label: "Est. rurales",
-            data: valor_rural,
-            backgroundColor: "rgb(172,108,52,0.9)",
+            label: "Est. totales",
+            data: scores,
+            backgroundColor: "rgba(210,177,144,0.9)",
           },
         ],
       }}

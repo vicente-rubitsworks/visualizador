@@ -20,6 +20,28 @@ export default function ResumenDirectorio(props) {
 
   const base_url = `http://analizador-backend.herokuapp.com/evolucion/directorio/`;
 
+  const url = `${base_url}/total/`;
+  const [query, setQuery] = useState();
+
+  const fetchApi = async () => {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        variable: "RURAL_RBD",
+      }),
+    });
+    const responseJSON = await response.json();
+    setQuery(responseJSON);
+    setShow(false);
+  };
+  useEffect(() => {
+    fetchApi();
+  }, []);
+
   return (
     <Structure>
       <>

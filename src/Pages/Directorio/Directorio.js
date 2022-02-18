@@ -3,11 +3,8 @@ import { Row, Container, Col, Modal, Button } from "react-bootstrap";
 import Tarjeta from "../../Component/Tarjeta";
 import CardFigure from "../../Component/CardFigure";
 import ChartDependencias from "./Dependencias";
-import DependenciasRurales from "./DependenciasRurales";
-import DirectorioComunas from "./DirectorioComunas";
 import Estado from "./Estado";
 import RuralidadComuna from "./RuralidadComunas";
-import EstadosRurales from "./EstadosRurales";
 import Structure from "../../Component/Structure";
 
 export default function Directorio(props) {
@@ -102,7 +99,7 @@ export default function Directorio(props) {
         </div>
         {/* /.container-fluid */}
       </div>
-      <Container fluid>
+      <Container fluid className="text-center">
         {/* Tarjetas iniciales*/}
         <Row>
           <Tarjeta
@@ -120,7 +117,8 @@ export default function Directorio(props) {
         </Row>
         {/* Graficos */}
         <Row>
-          <Col className="connectedSortable">
+          <Col className="connectedSortable ">
+            <p> ¿ Cómo están distribuidos nuestros establecimientos ? </p>
             {/* Comunas y urbanismo */}
             <CardFigure
               click={urban}
@@ -136,6 +134,7 @@ export default function Directorio(props) {
         </Row>
         <Row>
           <Col className="connectedSortable" lg={7}>
+            <p>¿ Cual es el estado de nuestro directorio ?</p>
             {/* Estado de establecimientos */}
             <CardFigure
               click={click}
@@ -146,28 +145,7 @@ export default function Directorio(props) {
             </CardFigure>
           </Col>
           <Col className="connectedSortable" lg={5}>
-            {/* Estado de los establecimiento y urbanismo*/}
-            <CardFigure
-              nombre="Dependencia adm. por urbanismo"
-              icono="fas fa-chart-bar mr-2"
-              click={urban2}
-            >
-              <DependenciasRurales url_base={base_url} cambio={urbano2} />
-            </CardFigure>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="connectedSortable" lg={5}>
-            {/* Dependencia administrativa por urbanismo */}
-            <CardFigure
-              nombre="Estado de los estab. y urbanismo"
-              icono="fas fa-chart-bar mr-2"
-              click={estad}
-            >
-              <EstadosRurales url_base={base_url} cambio={estados} />
-            </CardFigure>
-          </Col>
-          <Col className="connectedSortable" lg={7}>
+            <p>¿ Cómo se administra nuestro directorio ?</p>
             {/* Dependencia administrativa */}
             <CardFigure
               nombre="Dependencia administrativa"
