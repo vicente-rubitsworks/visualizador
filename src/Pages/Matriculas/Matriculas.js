@@ -121,7 +121,8 @@ export default function Matrículas(props) {
           <Tarjeta nombre="Comunas" dato="15" icon="fa-city" />
         </Row>
         <Row>
-          <Col className="connectedSortable">
+          <Col className="connectedSortable text-center">
+            <p>¿Donde se encuentran nuestros estudiantes ?</p>
             <CardFigure
               nombre={"Matrículas por directorio"}
               icono="fas fa-chart-bar mr-2"
@@ -131,7 +132,8 @@ export default function Matrículas(props) {
           </Col>
         </Row>
         <Row>
-          <Col xl={7} className="connectedSortable">
+          <Col xl={7} className="connectedSortable text-center">
+            <p>¿Cuantos alumnos abarca cada administración?</p>
             <CardFigure
               nombre={"Matrículas por dependencia"}
               icono="fas fa-chart-bar mr-2"
@@ -139,7 +141,8 @@ export default function Matrículas(props) {
               <Dependencias url_base={base_url}></Dependencias>
             </CardFigure>
           </Col>
-          <Col xl={5} className="connectedSortable">
+          <Col xl={5} className="connectedSortable text-center">
+            <p>¿Cuantos alumnos estan en sectores rurales?</p>
             <CardFigure
               nombre={"Matrículas por urbanismo"}
               icono="fas fa-chart-pie mr-2"
@@ -150,7 +153,8 @@ export default function Matrículas(props) {
         </Row>
 
         <Row>
-          <Col lg={5} className="connectedSortable">
+          <Col lg={5} className="connectedSortable text-center">
+            <p>¿Como esta la distribución por género en la región?</p>
             <CardFigure
               icono="fas fa-chart-pie mr-2"
               nombre={"Matrículas por géneros"}
@@ -158,7 +162,7 @@ export default function Matrículas(props) {
               <Generos url_base={base_url}></Generos>
             </CardFigure>
           </Col>
-          <Col lg={7} className="connectedSortable"></Col>
+          <Col lg={7} className="connectedSortable text-center"></Col>
         </Row>
       </Container>
     </Structure>

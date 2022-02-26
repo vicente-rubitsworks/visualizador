@@ -46,14 +46,7 @@ export default function ChartDependencias(props) {
     ],
   };
 
-    return (
-      <Bar
-        data={data}
-        plugins={[ChartDataLabels]}
-        height={250}
-        options={{ maintainAspectRatio: false }}
-      />
-    );
-
- 
+  return (
+    <Bar data={data} height={250} options={{ maintainAspectRatio: false }} />
+  );
 }

@@ -79,7 +79,8 @@ export default function ResumenDirectorio(props) {
         </Row>
         {/* Graficos */}
         <Row>
-          <Col lg={7} className="connectedSortable">
+          <Col lg={7} className="connectedSortable text-center">
+            <p>¿ Cómo ha evolucionado el directorio en los últimos años ?</p>
             <CardFigure
               nombre="Evolución del directorio"
               icono="fas fa-chart-line mr-2"
@@ -93,9 +94,10 @@ export default function ResumenDirectorio(props) {
               />
             </CardFigure>
           </Col>
-          <Col lg={5} className="connectedSortable">
+          <Col lg={5} className="connectedSortable text-center">
+            <p>¿ Cuanto ha cambiado el directorio por sector rural ?</p>
             <CardFigure
-              nombre="Evolución del estado urbano"
+              nombre="Evolución del los establecimientos rurales"
               icono="fas fa-chart-line mr-2"
             >
               <Comunas
@@ -109,7 +111,8 @@ export default function ResumenDirectorio(props) {
           </Col>
         </Row>
         <Row>
-          <Col className="connectedSortable">
+          <Col className="connectedSortable text-center">
+            <p>¿ Cuanto ha cambiado el directorio en cada comuna ?</p>
             <CardFigure
               nombre="Evolución del directorio por comunas"
               icono="fas fa-chart-line mr-2"
@@ -125,10 +128,11 @@ export default function ResumenDirectorio(props) {
           </Col>
         </Row>
         <Row>
-          <Col lg={5} className="connectedSortable">
+          <Col lg={5} className="connectedSortable text-center">
             {" "}
+            <p>¿Cómo ha cambiado cada tipo administración?</p>
             <CardFigure
-              nombre="Evolución del directorio por dependencia adm."
+              nombre="Dependencia administrativa"
               icono="fas fa-chart-line mr-2"
             >
               <Comunas
@@ -140,8 +144,9 @@ export default function ResumenDirectorio(props) {
               />
             </CardFigure>
           </Col>
-          <Col lg={7} className="connectedSortable">
+          <Col lg={7} className="connectedSortable text-center">
             {" "}
+            <p>¿Cómo ha cambiado cada tipo administración?</p>
             <CardFigure
               nombre="Evolución del directorio por dep. adm. resumida"
               icono="fas fa-chart-line mr-2"
