@@ -21,7 +21,7 @@ export default function Resumen(props) {
           </a>
         </li>
         <li className="nav-item">
-          <a href={`${link}/r-matriculass`} className="nav-link">
+          <a href={`${link}/resumen/matriculas`} className="nav-link">
             <i className="fas fa-arrow-right nav-icon"></i>
             <p>Matriculas</p>
           </a>

@@ -7,6 +7,7 @@ import Home from "./Pages/Home";
 import Directorio from "./Pages/Directorio";
 import Matriculas from "./Pages/Matriculas";
 import ResumenDirectorio from "./Pages/ResumenDirectorio";
+import ResumenMatricula from "./Pages/ResumenMatricula/ResumenDirectorio";
 import Creador from "./Pages/CreadorDeGraficos";
 
 ReactDOM.render(
@@ -16,6 +17,7 @@ ReactDOM.render(
         <Route path="/" element={<App />} />
         <Route path="Home" element={<Home />} />
         <Route path="resumen/directorios" element={<ResumenDirectorio />} />
+        <Route path="resumen/matriculas" element={<ResumenMatricula />} />
 
         <Route path="directorio/2021" element={<Directorio />} />
         <Route path="directorio/2020" element={<Directorio anio={2020} />} />
