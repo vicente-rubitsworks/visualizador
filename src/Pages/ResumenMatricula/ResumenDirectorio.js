@@ -18,7 +18,7 @@ export default function ResumenMatricula(props) {
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
 
-  const base_url = `http://127.0.0.1:8000/evolucion/matriculas/`;
+  const base_url = `http://analizador-backend.herokuapp.com/evolucion/matriculas/`;
 
   const url = `${base_url}/total/`;
   const [query, setQuery] = useState();
@@ -89,7 +89,7 @@ export default function ResumenMatricula(props) {
               <Totales
                 cambio={started}
                 url_base={
-                  "http://127.0.0.1:8000/evolucion/matriculas"
+                  "http://analizador-backend.herokuapp.com/evolucion/matriculas"
                 }
               />
             </CardFigure>
@@ -102,7 +102,7 @@ export default function ResumenMatricula(props) {
             >
               <Comunas
                 url_base={
-                  "http://127.0.0.1:8000/evolucion/matriculas"
+                  "http://analizador-backend.herokuapp.com/evolucion/matriculas"
                 }
                 column={"RURAL_RBD"}
                 color={"172,108,52"}
@@ -119,7 +119,7 @@ export default function ResumenMatricula(props) {
             >
               <Comunas
                 url_base={
-                  "http://127.0.0.1:8000/evolucion/matriculas"
+                  "http://analizador-backend.herokuapp.com/evolucion/matriculas"
                 }
                 column={"NOM_COM_RBD"}
                 color={"60, 141, 188"}
@@ -137,7 +137,7 @@ export default function ResumenMatricula(props) {
             >
               <Comunas
                 url_base={
-                  "http://127.0.0.1:8000/evolucion/matriculas"
+                  "http://analizador-backend.herokuapp.com/evolucion/matriculas"
                 }
                 column={"COD_DEPE2"}
                 color={"190,198,220"}
@@ -153,7 +153,7 @@ export default function ResumenMatricula(props) {
             >
               <Comunas
                 url_base={
-                  "http://127.0.0.1:8000/evolucion/matriculas"
+                  "http://analizador-backend.herokuapp.com/evolucion/matriculas"
                 }
                 column={"COD_DEPE"}
                 color={"210,177,144"}
