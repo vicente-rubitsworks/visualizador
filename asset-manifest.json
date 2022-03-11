@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/visualizador/static/js/main.dbb09edc.js",
+    "main.js": "/visualizador/static/js/main.411dbd58.js",
     "static/js/787.628da90c.chunk.js": "/visualizador/static/js/787.628da90c.chunk.js",
     "static/media/ucn_logo.png": "/visualizador/static/media/ucn_logo.36bbacc83a9c2b0206c2.png",
     "index.html": "/visualizador/index.html",
-    "main.dbb09edc.js.map": "/visualizador/static/js/main.dbb09edc.js.map",
+    "main.411dbd58.js.map": "/visualizador/static/js/main.411dbd58.js.map",
     "787.628da90c.chunk.js.map": "/visualizador/static/js/787.628da90c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.dbb09edc.js"
+    "static/js/main.411dbd58.js"
   ]
 }
